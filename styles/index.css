@@ -1,0 +1,136 @@
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* paragraphs */
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* (background, headings, buttons) */
+  --Very-light-gray: hsl(0, 0%, 95%);
+}
+
+body {
+  /* positioned */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* box model */
+  min-height: 100vh;
+
+  /* typography, fonts */
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  /* 700 */
+  /* font-family: 'Big Shoulders Display', sans-serif; */
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.cards {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  grid-template-rows: repeat(3, 1fr);
+
+  /* box model */
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 30px;
+}
+
+.base-card {
+  /* positioned */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  /* box model */
+  padding: 40px;
+  max-width: 330px;
+  /* visual */
+  background-color: var(--Bright-orange);
+}
+
+.base-card__image-container {
+  /* box model */
+  margin: 20px 0;
+}
+
+.card-base-title {
+  /* typography, fonts */
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  word-spacing: 0.5px;
+  color: var(--Transparent-white);
+  text-transform: uppercase;
+}
+
+.card-base__text {
+  /* typography, fonts */
+  color: var(--Transparent-white);
+}
+
+.card-base__btn {
+  /* positioned */
+  display: inline;
+  max-width: 70%;
+
+  /* box model */
+  padding: 20px 10px;
+  border-radius: 30px;
+  border: 1px solid white;
+
+  /* typography, fonts */
+  text-transform: capitalize;
+  color: var(--Bright-orange);
+
+  /* visual */
+  background-color: white;
+}
+
+/* hovers */
+
+.card-base__btn:hover {
+  background-color: transparent;
+  border: 1px solid var(--Transparent-white);
+  color: var(--Transparent-white);
+}
+
+/* modifiers */
+
+.base-card--dark-cyan {
+  /* visual */
+  background-color: var(--Dark-cyan);
+}
+
+.card-base__btn--dark-cyan {
+  color: var(--Dark-cyan);
+}
+
+.base-card--very-dark-cyan {
+  /* visual */
+  background-color: var(--Very-dark-cyan);
+}
+
+.card-base__btn--very-dark-cyan {
+  color: var(--Very-dark-cyan);
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+  }
+}
